@@ -9,6 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const button = document.getElementById('btn')
   button.addEventListener('dblclick', clicked)
   getPokemon()
+  const pokeSearch = document.getElementById('pokeSearch')
+  //console.log(pokeSearch)
+  pokeSearch.addEventListener('input', (e) => {
+    let pokeTarget = e.target.value
+    pokemon.forEach(pokenames => {
+      //console.log(pokenames.name)
+      if (pokenames.name === pokeTarget) {
+        info1.textContent = pokeTarget
+      } else {
+        info1.textContent = "Doesnt Exist"
+      }
+    })
+  })
 })
 
 function getPokemon (){
